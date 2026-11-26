@@ -166,7 +166,7 @@ export function SiteHeader() {
                           variant="secondary"
                           size="xs"
                           className="harness-github-button min-w-[80px] shrink-0"
-                          href="https://github.com/JinPenG-AI"
+                          href={siteLinks.repository}
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => trackInteraction('header_github')}
@@ -341,7 +341,7 @@ export function SiteHeader() {
               }
               {
                 <a
-                  href="https://github.com/JinPenG-AI"
+                  href={siteLinks.repository}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ds-mobile-menu-item"
