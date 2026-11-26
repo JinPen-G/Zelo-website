@@ -1,4 +1,4 @@
-name: Deploy Rental OS website
+name: Deploy Zelo website
 
 on:
   push:
