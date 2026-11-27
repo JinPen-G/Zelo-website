@@ -102,7 +102,7 @@ export function SiteHeader() {
             >
               {
                 <LocalizedLink
-                  href="/harness"
+                  href="/"
                   className="flex items-center gap-[8px] min-w-0 text-[var(--ds-color-brand-medium-reverse)]"
                 >
                   {
@@ -240,7 +240,7 @@ export function SiteHeader() {
             <div className="ds-mobile-menu-header">
               {
                 <LocalizedLink
-                  href="/harness"
+                  href="/"
                   className="flex items-center text-[var(--ds-color-brand-medium-reverse)]"
                   onClick={() => setMenuOpen(false)}
                 >

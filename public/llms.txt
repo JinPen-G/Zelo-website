@@ -8,8 +8,8 @@ Zelo provides shared authentication, permissions, subscriptions and an admin she
 
 - [Source repository and Chinese overview](https://github.com/JinPen-G/Zelo)
 - [English overview and quick start](https://github.com/JinPen-G/Zelo/blob/main/README.en.md)
-- [Chinese website](https://jinpen-g.github.io/Zelo-website/harness/)
-- [English website](https://jinpen-g.github.io/Zelo-website/en/harness/)
+- [Chinese website](https://jinpen-g.github.io/Zelo-website/)
+- [English website](https://jinpen-g.github.io/Zelo-website/en/)
 - [License](https://github.com/JinPen-G/Zelo/blob/main/LICENSE)
 
 ## Developer references

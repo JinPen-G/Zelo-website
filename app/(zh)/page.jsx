@@ -3,7 +3,7 @@ import { SiteApp } from "../../components/SiteApp";
 export default function Home() {
   return (
     <>
-      <LanguageBootstrap home />
+      <LanguageBootstrap locale="zh" />
       <SiteApp locale="zh" />
     </>
   );

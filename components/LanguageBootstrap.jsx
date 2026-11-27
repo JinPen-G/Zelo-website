@@ -1,7 +1,8 @@
 "use client";
 import { useEffect } from "react";
 import { sitePath } from "../lib/site";
-export function LanguageBootstrap({ locale = "zh", home = false }) {
+
+export function LanguageBootstrap({ locale = "zh" }) {
   useEffect(() => {
     const stored = document.cookie.match(
       /(?:^|;\s*)NEXT_LOCALE=(zh|en)(?:;|$)/,
@@ -11,10 +12,13 @@ export function LanguageBootstrap({ locale = "zh", home = false }) {
       (/^zh(?:-|$)/i.test(navigator.languages?.[0] || navigator.language || "")
         ? "zh"
         : "en");
-    if (home || preferred !== locale)
+    if (preferred !== locale) {
       location.replace(
-        sitePath(preferred === "en" ? "/en/harness/" : "/harness/") + location.search + location.hash,
+        sitePath(preferred === "en" ? "/en/" : "/") +
+          location.search +
+          location.hash,
       );
-  }, [locale, home]);
+    }
+  }, [locale]);
   return null;
 }

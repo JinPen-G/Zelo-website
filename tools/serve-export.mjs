@@ -56,7 +56,7 @@ const server = http.createServer(async (req, res) => {
     }
     pathname = pathname.slice(basePath.length);
   }
-  const page = /^(?:\/(?:en\/)?harness\/?|\/)$/u.test(pathname);
+  const page = /^(?:\/(?:en(?:\/harness)?|harness)\/?|\/)$/u.test(pathname);
   const route = page
     ? pathname.replace(/\/$/, "") +
       "/" +
@@ -101,6 +101,6 @@ server.on("error", (error) => {
 });
 server.listen(port, "127.0.0.1", () =>
   console.log(
-    "Zelo static export: http://127.0.0.1:" + port + basePath + "/harness/",
+    "Zelo static export: http://127.0.0.1:" + port + basePath + "/",
   ),
 );

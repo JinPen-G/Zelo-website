@@ -12,9 +12,9 @@ if not exist "node_modules\next\dist\bin\next" (
   pause
   exit /b 1
 )
-echo Rental OS Next.js source: http://127.0.0.1:8140/harness/
+echo Zelo Next.js source: http://127.0.0.1:8140/
 echo Keep this window open. Press Ctrl+C to stop.
-start "" "http://127.0.0.1:8140/harness/"
+start "" "http://127.0.0.1:8140/"
 node node_modules\next\dist\bin\next dev --webpack --hostname 127.0.0.1 --port 8140
 if errorlevel 1 pause
 endlocal

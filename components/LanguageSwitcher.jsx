@@ -10,8 +10,8 @@ export function LanguageSwitcher() {
       aria-label={locale === "en" ? "Language" : "语言"}
     >
       {[
-        ["zh", "中文", "/harness/"],
-        ["en", "EN", "/en/harness/"],
+        ["zh", "中文", "/"],
+        ["en", "EN", "/en/"],
       ].map(([value, label, href]) => (
         <button
           type="button"
