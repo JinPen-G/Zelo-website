@@ -2,7 +2,6 @@ import { LocaleProvider } from "./LocaleProvider";
 import zh from "../messages/zh.json";
 import en from "../messages/en.json";
 import { LandingPage } from "./LandingPage";
-import { DemoForm } from "./forms/DemoForm";
 import { siteStructuredData } from "../lib/seo";
 export function SiteApp({ locale }) {
   return (
@@ -14,7 +13,6 @@ export function SiteApp({ locale }) {
         }}
       />
       <LandingPage />
-      <DemoForm />
     </LocaleProvider>
   );
 }

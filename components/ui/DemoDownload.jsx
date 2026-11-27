@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState, useId } from "react";
 import { useTranslations } from "next-intl";
 import { Button, ChevronDown } from "./primitives";
-import { requestDemo } from "../../lib/site";
+import { githubIssueUrl } from "../../lib/site";
 
 export function DemoDownload({
   label,
@@ -11,6 +11,10 @@ export function DemoDownload({
   className,
 }) {
   const t = useTranslations("Harness.Index");
+  const contactHref = githubIssueUrl(
+    label || t("harnessDemoAction"),
+    t("harnessUse1Inquiry"),
+  );
   const [open, setOpen] = useState(false);
   const root = useRef(null),
     arrow = useRef(null),
@@ -44,15 +48,13 @@ export function DemoDownload({
         data-size={size}
       >
         <Button
+          as="a"
           size={size}
           className="HarnessDownloadMenu_action__Qe9nK !rounded-r-none !pr-ds-3"
-          type="button"
-          aria-haspopup="dialog"
-          aria-controls="demo-request"
-          onClick={(event) => {
-            setOpen(false);
-            requestDemo(event.currentTarget);
-          }}
+          href={contactHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setOpen(false)}
         >
           {label || t("harnessDemoAction")}
         </Button>

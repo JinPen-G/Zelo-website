@@ -57,8 +57,8 @@ tools/                   静态预览、源码检查及一次性迁移工具
 
 - 中文 `/harness/`，英文 `/en/harness/`。明确语言路径保持对应语言。根路径先提供完整的中文静态正文，再进入浏览器偏好的版本；中文以外默认英语，手动选择写入 `NEXT_LOCALE` Cookie。
 - AI 管理、传统管理、预约、履约、门店协同、插件、自动任务和能力卡片保留前端演示。确认操作只产生示例回执，不连接真实 AI 或业务系统。
-- 预约/合作入口共用 React 表单，保留咨询意向预填、人工输入保护、请求标识重试、超时与后端回执判断。线上配置公开构建变量 `NEXT_PUBLIC_DEMO_API_BASE_URL`（HTTPS，含 `/api`）；未配置时不伪造成功。仅本机 HTTP 预览可回落到 `http://127.0.0.1:3000/api`。
-- 顶栏和页脚 GitHub、页脚 X 使用用户指定链接。页脚署名 `Powered by PenG-AI · All rights reserved.`。移动菜单的外部文档、插件和论文沿各自来源维护，政策文字沿现有入口呈现。
+- 顶栏联系按钮、部署卡片和合作入口统一跳转至 GitHub（`JinPen-G/Zelo/issues/new` 预填主题与正文、`JinPen-G/Zelo/discussions` 及 `JinPen-G/Zelo-rental-core`），不再弹出前端预约表单；`components/forms/DemoForm.jsx` 暂不挂载，仅作保留参考。
+- 顶栏和页脚 GitHub、页脚 X 使用用户指定链接。页脚署名 `Powered by PenG-AI · All rights reserved.`。移动菜单的接入文档、GitHub 讨论区和公开 Core 生态统一指向 GitHub 对应入口，政策文字沿现有入口呈现。
 - 原站字体、图标和着色器的来源不因迁移而变化；源码迁移不等于第三方素材已获得新的许可。
 
 ## 与旧目录的关系

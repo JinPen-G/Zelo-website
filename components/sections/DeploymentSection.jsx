@@ -4,14 +4,19 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { EASE_IN_OUT } from '../ui/primitives.jsx';
 import { Heading } from '../shared/Heading.jsx';
+import { githubIssueUrl } from '../../lib/site.js';
 export function DeploymentSection() {
   let t = useTranslations('Harness.Index'),
-    options = [1, 2].map((index) => ({
-      label: t('harnessUse' + index + 'Label'),
-      desc: t('harnessUse' + index + 'Desc'),
-      action: t('harnessUse' + index + 'Action'),
-      topic: t('harnessUse' + index + 'Inquiry'),
-    }));
+    options = [1, 2].map((index) => {
+      const action = t('harnessUse' + index + 'Action'),
+        topic = t('harnessUse' + index + 'Inquiry');
+      return {
+        label: t('harnessUse' + index + 'Label'),
+        desc: t('harnessUse' + index + 'Desc'),
+        action,
+        href: githubIssueUrl(action, topic),
+      };
+    });
   return (
     <section
       className="ds-container py-ds-10"
@@ -88,24 +93,14 @@ export function DeploymentSection() {
                   {
                     <div className="mt-ds-2">
                       {
-                        <button
-                          type="button"
+                        <a
+                          href={n.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="ds-btn-primary ds-btn-m"
-                          aria-haspopup="dialog"
-                          aria-controls="demo-request"
-                          onClick={(event) =>
-                            document.dispatchEvent(
-                              new CustomEvent('rentalos:request-demo', {
-                                detail: {
-                                  trigger: event.currentTarget,
-                                  topic: n.topic,
-                                },
-                              }),
-                            )
-                          }
                         >
                           {n.action}
-                        </button>
+                        </a>
                       }
                     </div>
                   }

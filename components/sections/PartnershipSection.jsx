@@ -8,6 +8,7 @@ import { InteractiveGrid } from '../effects/InteractiveGrid.jsx';
 import { EASE_IN_OUT } from '../ui/primitives.jsx';
 import { Heading } from '../shared/Heading.jsx';
 import { Button } from '../ui/primitives.jsx';
+import { siteLinks, githubIssueUrl } from '../../lib/site.js';
 export function PartnershipSection() {
   const t = useTranslations('Harness.Index');
   const locale = useLocale();
@@ -150,84 +151,50 @@ export function PartnershipSection() {
             >
               {
                 <Button
-                  as="button"
-                  type="button"
+                  as="a"
                   variant="primary"
-                  aria-haspopup="dialog"
-                  aria-controls="demo-request"
-                  onClick={(event) =>
-                    document.dispatchEvent(
-                      new CustomEvent('rentalos:request-demo', {
-                        detail: {
-                          trigger: event.currentTarget,
-                          topic: t('harnessPartner1Inquiry'),
-                        },
-                      }),
-                    )
-                  }
+                  href={siteLinks.discussions}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {t('harnessPartner1Action')}
                 </Button>
               }
               {
                 <Button
-                  as="button"
-                  type="button"
+                  as="a"
                   variant="secondary"
-                  aria-haspopup="dialog"
-                  aria-controls="demo-request"
-                  onClick={(event) =>
-                    document.dispatchEvent(
-                      new CustomEvent('rentalos:request-demo', {
-                        detail: {
-                          trigger: event.currentTarget,
-                          topic: t('harnessPartner2Inquiry'),
-                        },
-                      }),
-                    )
-                  }
+                  href={githubIssueUrl(
+                    t('harnessPartner2Action'),
+                    t('harnessPartner2Inquiry'),
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {t('harnessPartner2Action')}
                 </Button>
               }
               {
                 <Button
-                  as="button"
-                  type="button"
+                  as="a"
                   variant="secondary"
-                  aria-haspopup="dialog"
-                  aria-controls="demo-request"
-                  onClick={(event) =>
-                    document.dispatchEvent(
-                      new CustomEvent('rentalos:request-demo', {
-                        detail: {
-                          trigger: event.currentTarget,
-                          topic: t('harnessPartner3Inquiry'),
-                        },
-                      }),
-                    )
-                  }
+                  href={githubIssueUrl(
+                    t('harnessPartner3Action'),
+                    t('harnessPartner3Inquiry'),
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {t('harnessPartner3Action')}
                 </Button>
               }
               {
                 <Button
-                  as="button"
-                  type="button"
+                  as="a"
                   variant="secondary"
-                  aria-haspopup="dialog"
-                  aria-controls="demo-request"
-                  onClick={(event) =>
-                    document.dispatchEvent(
-                      new CustomEvent('rentalos:request-demo', {
-                        detail: {
-                          trigger: event.currentTarget,
-                          topic: t('harnessPartner4Inquiry'),
-                        },
-                      }),
-                    )
-                  }
+                  href={siteLinks.rentalCore}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {t('harnessPartner4Action')}
                 </Button>

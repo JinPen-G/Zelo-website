@@ -2,7 +2,7 @@
 // Migrated component logic; edit this source directly. No captured runtime is loaded.
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
-import { siteLinks, assetPath } from '../lib/site.js';
+import { siteLinks, assetPath, githubIssueUrl } from '../lib/site.js';
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import { LocalizedLink } from './LocalizedLink.jsx';
@@ -262,21 +262,14 @@ export function SiteHeader() {
             <nav className="ds-mobile-menu-body">
               {
                 <a
-                  href="#demo-request"
+                  href={githubIssueUrl(
+                    t('harnessDemoAction'),
+                    t('harnessUse1Inquiry'),
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="ds-mobile-menu-item"
-                  aria-haspopup="dialog"
-                  aria-controls="demo-request"
-                  onClick={(e) => {
-                    (e.preventDefault(),
-                      setMenuOpen(false),
-                      document.dispatchEvent(
-                        new CustomEvent('rentalos:request-demo', {
-                          detail: {
-                            trigger: e.currentTarget,
-                          },
-                        }),
-                      ));
-                  }}
+                  onClick={() => setMenuOpen(false)}
                 >
                   {t('harnessDemoAction')}
                 </a>
